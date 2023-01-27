@@ -17,6 +17,18 @@ class Furniture {
       required this.furnitureThumbNailsUrl});
 
   static get randomId {
-    return DateTime.now().millisecondsSinceEpoch.toString();
+    final random = Random();
+    const availableChars =
+        'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
+    final randomString = List.generate(10,
+            (index) => availableChars[random.nextInt(availableChars.length)])
+        .join();
+    return randomString;
+  }
+
+  static get randomColor {
+    final random = Random();
+    return Colors.primaries[random.nextInt(Colors.primaries.length)]
+        .withOpacity(.1);
   }
 }
