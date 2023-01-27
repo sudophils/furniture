@@ -1,3 +1,7 @@
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
 class Furniture {
   final String id;
   final String furnitureName;
